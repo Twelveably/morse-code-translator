@@ -7,10 +7,9 @@ bool program;
 int main() {
 	program = true;
 
-	while (program) {
-		Translator translator;
-
-		translator.convertTextToMorse();
+	Translator translator;
+	while (program) { // Puts program in a loop
+		translator.convertTextToMorse(); // Execute
 	}
 	return 0;
 }

@@ -10,15 +10,15 @@
 #include <Windows.h>
 #include "Morse.h"
 
-const int FREQUENCY = 650;
-const int SHORT_BEEP = 150;
-const int LONG_BEEP = 300;
+const int FREQUENCY = 400; // Frequency it operates on
+const int SHORT_BEEP = 120; // Duration 120ms
+const int LONG_BEEP = 200; // Duration 200ms
 
-void dot() {
+void dot() { // Short sound
 	Beep(FREQUENCY, SHORT_BEEP);
 }
 
-void dash() {
+void dash() { // Long sound
 	Beep(FREQUENCY, LONG_BEEP);
 }
 
@@ -69,20 +69,18 @@ void Morse::translateAlphabets(char input) {
 	default: output = "/"; break;
 	}
 
-	for (char c : output) {
+	for (char c : output) { // For each dot and dashes
 		if (c == '.') {
 			std::cout << c << std::flush;
 			dot();
-			Sleep(50);
 		} else if (c == '-') {
 			std::cout << c << std::flush;
 			dash();
 		} else {
 			std::cout << c << std::flush;
-			Sleep(300);
+			Sleep(500);
 		}
-		Sleep(10);
-	} 	Sleep(300);
-	std::cout << " " << std::flush;;
+	} 	Sleep(200);
+	std::cout << " " << std::flush; // Separate each morse alphabets
 
 }

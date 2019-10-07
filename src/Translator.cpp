@@ -16,12 +16,12 @@ void Translator::convertTextToMorse() {
 	Morse morse;
 
 	std::string input;
-	std::cout << "Input: ";
+	std::cout << "Input: "; // Ask for input
 	std::getline(std::cin, input);
 
 	std::transform(input.begin(), input.end(), input.begin(), ::toupper);
 
-	std::cout << "Output: " << std::flush;
+	std::cout << "Output: " << std::flush; // Show output
 	for (char c : input) {
 		morse.translateAlphabets(c);
 	}
