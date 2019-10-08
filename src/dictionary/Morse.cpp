@@ -1,11 +1,3 @@
-/*
- * Morse.cpp
- *
- *  Created on: Oct 6, 2019
- *      Author: Bagaskara
- */
-
-#include <iostream>
 #include <string>
 #include <Windows.h>
 #include "Morse.h"
@@ -66,21 +58,31 @@ void Morse::translateAlphabets(char input) {
 	case '?': output = "..--.."; break;
 	case '/': output = "-..-."; break;
 	case '@': output = ".--.-."; break;
-	default: output = "/"; break;
+	case '!': output = "-.-.--"; break;
+	case ':': output = "---..."; break;
+	case ';': output = "-.-.-"; break;
+	case '\'': output = ".----."; break;
+	case '=': output = "-...-"; break;
+	case ' ': output = "/"; break;
+	default: output = " "; break;
 	}
 
 	for (char c : output) { // For each dot and dashes
-		if (c == '.') {
+		switch(c){
+		case '.':
 			std::cout << c << std::flush;
 			dot();
-		} else if (c == '-') {
+			break;
+		case '-':
 			std::cout << c << std::flush;
 			dash();
-		} else {
+			break;
+		default:
 			std::cout << c << std::flush;
 			Sleep(500);
+			break;
 		}
-	} 	Sleep(200);
+	} Sleep(200);
 	std::cout << " " << std::flush; // Separate each morse alphabets
 
 }
