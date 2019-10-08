@@ -5,6 +5,7 @@
  *      Author: Bagaskara
  */
 
+#include <iostream>
 #include <algorithm>
 #include <cctype>
 #include <string>
