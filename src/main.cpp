@@ -2,13 +2,13 @@
 #include "dictionary/Morse.h"
 #include "Translator.h"
 
-bool program;
+bool program_;
 
 int main() {
-	program = true;
+	program_ = true;
 
 	Translator translator;
-	while (program) { // Puts program in a loop
+	while (program_) { // Puts program in a loop
 		translator.convertTextToMorse(); // Execute
 	}
 	return 0;

@@ -15,14 +15,15 @@
 void Translator::convertTextToMorse() {
 	Morse morse;
 
-	std::string input;
+	system("Color A");
+	std::string input_;
 	std::cout << "Input: "; // Ask for input
-	std::getline(std::cin, input);
+	std::getline(std::cin, input_);
 
-	std::transform(input.begin(), input.end(), input.begin(), ::toupper);
+	std::transform(input_.begin(), input_.end(), input_.begin(), ::toupper);
 
 	std::cout << "Output: " << std::flush; // Show output
-	for (char c : input) {
+	for (char c : input_) {
 		morse.translateAlphabets(c);
 	}
 

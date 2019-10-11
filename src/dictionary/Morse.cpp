@@ -3,83 +3,83 @@
 #include <Windows.h>
 #include "Morse.h"
 
-const int FREQUENCY = 400; // Frequency it operates on
-const int SHORT_BEEP = 120; // Duration 120ms
-const int LONG_BEEP = 200; // Duration 200ms
+const int FREQUENCY_ = 400; // Frequency it operates on
+const int SHORT_BEEP_ = 120; // Duration 120ms
+const int LONG_BEEP_ = 200; // Duration 200ms
 
 void dot() { // Short sound
-	Beep(FREQUENCY, SHORT_BEEP);
+	Beep(FREQUENCY_, SHORT_BEEP_);
 }
 
 void dash() { // Long sound
-	Beep(FREQUENCY, LONG_BEEP);
+	Beep(FREQUENCY_, LONG_BEEP_);
 }
 
-void Morse::translateAlphabets(char input) {
-    std::string output;
-	switch (input) {
-	case 'A': output = ".-"; break; // Alphabets
-	case 'B': output = "-..."; break;
-	case 'C': output = "-.-."; break;
-	case 'D': output = "-.."; break;
-	case 'E': output = "."; break;
-	case 'F': output = "..-."; break;
-	case 'G': output = "--."; break;
-	case 'H': output = "...."; break;
-	case 'I': output = ".."; break;
-	case 'J': output = ".---"; break;
-	case 'K': output = "-.-"; break;
-	case 'L': output = ".-.."; break;
-	case 'M': output = "--"; break;
-	case 'N': output = "-."; break;
-	case 'O': output = "---"; break;
-	case 'P': output = ".--."; break;
-	case 'Q': output = "--.-"; break;
-	case 'R': output = ".-."; break;
-	case 'S': output = "..."; break;
-	case 'T': output = "-"; break;
-	case 'U': output = "..-"; break;
-	case 'V': output = "...-"; break;
-	case 'W': output = ".--"; break;
-	case 'X': output = "-..-"; break;
-	case 'Y': output = "-.--"; break;
-	case 'Z': output = "--.."; break;
-	case '1': output = ".----"; break; // Numbers
-	case '2': output = "..---"; break;
-	case '3': output = "...--"; break;
-	case '4': output = "....-"; break;
-	case '5': output = "....."; break;
-	case '6': output = "-...."; break;
-	case '7': output = "--..."; break;
-	case '8': output = "---.."; break;
-	case '9': output = "----."; break;
-	case '0': output = "-----"; break;
-	case '.': output = ".-.-.-"; break; // Symbols
-	case ',': output = "--..--"; break;
-	case '?': output = "..--.."; break;
-	case '/': output = "-..-."; break;
-	case '@': output = ".--.-."; break;
-	case '!': output = "-.-.--"; break;
-	case ':': output = "---..."; break;
-	case ';': output = "-.-.-"; break;
-	case '\'': output = ".----."; break;
-	case '=': output = "-...-"; break;
-	case ' ': output = "/"; break;
-	default: output = " "; break;
+void Morse::translateAlphabets(char _input) {
+    std::string output_;
+	switch (_input) {
+	case 'A': output_ =".-"; break; // Alphabets
+	case 'B': output_ ="-..."; break;
+	case 'C': output_ ="-.-."; break;
+	case 'D': output_ ="-.."; break;
+	case 'E': output_ ="."; break;
+	case 'F': output_ ="..-."; break;
+	case 'G': output_ ="--."; break;
+	case 'H': output_ ="...."; break;
+	case 'I': output_ =".."; break;
+	case 'J': output_ =".---"; break;
+	case 'K': output_ ="-.-"; break;
+	case 'L': output_ =".-.."; break;
+	case 'M': output_ ="--"; break;
+	case 'N': output_ ="-."; break;
+	case 'O': output_ ="---"; break;
+	case 'P': output_ =".--."; break;
+	case 'Q': output_ ="--.-"; break;
+	case 'R': output_ =".-."; break;
+	case 'S': output_ ="..."; break;
+	case 'T': output_ ="-"; break;
+	case 'U': output_ ="..-"; break;
+	case 'V': output_ ="...-"; break;
+	case 'W': output_ =".--"; break;
+	case 'X': output_ ="-..-"; break;
+	case 'Y': output_ ="-.--"; break;
+	case 'Z': output_ ="--.."; break;
+	case '1': output_ =".----"; break; // Numbers
+	case '2': output_ ="..---"; break;
+	case '3': output_ ="...--"; break;
+	case '4': output_ ="....-"; break;
+	case '5': output_ ="....."; break;
+	case '6': output_ ="-...."; break;
+	case '7': output_ ="--..."; break;
+	case '8': output_ ="---.."; break;
+	case '9': output_ ="----."; break;
+	case '0': output_ ="-----"; break;
+	case '.': output_ =".-.-.-"; break; // Symbols
+	case ',': output_ ="--..--"; break;
+	case '?': output_ ="..--.."; break;
+	case '/': output_ ="-..-."; break;
+	case '@': output_ =".--.-."; break;
+	case '!': output_ ="-.-.--"; break;
+	case ':': output_ ="---..."; break;
+	case ';': output_ ="-.-.-"; break;
+	case '\'': output_ =".----."; break;
+	case '=': output_ ="-...-"; break;
+	case ' ': output_ ="/"; break;
+	default: output_ =" "; break;
 	}
 
-	for (char c : output) { // For each dot and dashes
-		switch(c){
+	for (char c_ : output_) { // For each dot and dashes
+		switch(c_){
 		case '.':
-			std::cout << c << std::flush;
+			std::cout << c_ << std::flush;
 			dot();
 			break;
 		case '-':
-			std::cout << c << std::flush;
+			std::cout << c_ << std::flush;
 			dash();
 			break;
 		default:
-			std::cout << c << std::flush;
+			std::cout << c_ << std::flush;
 			Sleep(500);
 			break;
 		}

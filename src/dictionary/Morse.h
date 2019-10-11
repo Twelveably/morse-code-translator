@@ -12,7 +12,7 @@
 
 class Morse {
 public:
-	void translateAlphabets(char input);
+	void translateAlphabets(char _input);
 };
 
 void dash();
