@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
 #include <Windows.h>
+#include <cctype>
 #include "Morse.h"
 
 const int FREQUENCY_ = 400; // Frequency it operates on
-const int SHORT_BEEP_ = 120; // Duration 120ms
+const int SHORT_BEEP_ = 100; // Duration 120ms
 const int LONG_BEEP_ = 200; // Duration 200ms
 
 void dot() { // Short sound
@@ -83,7 +84,8 @@ void Morse::translateAlphabets(char _input) {
 			Sleep(500);
 			break;
 		}
-	} Sleep(200);
+	} Sleep(70);
 	std::cout << " " << std::flush; // Separate each morse alphabets
+	Sleep(100);
 
 }

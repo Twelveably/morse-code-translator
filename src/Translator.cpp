@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <cctype>
 #include <string>
+#include <Windows.h>
 #include "translator.h"
 #include "dictionary/Morse.h"
 
@@ -23,6 +24,9 @@ void Translator::convertTextToMorse() {
 	std::transform(input_.begin(), input_.end(), input_.begin(), ::toupper);
 
 	std::cout << "Output: " << std::flush; // Show output
+
+	Sleep(1000);
+
 	for (char c : input_) {
 		morse.translateAlphabets(c);
 	}
